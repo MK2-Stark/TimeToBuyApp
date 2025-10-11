@@ -13,9 +13,22 @@ export default function App() {
       setResult('Enter valid numbers.');
       return;
     }
-    const hours = price / rate;
-    const days = hours / 8;  // 8-hour days
-    setResult(`Hours: ${hours.toFixed(2)}\nDays: ${days.toFixed(2)}`);
+    const totalHours = price / rate;
+    const days = Math.floor(totalHours / 24);
+    const remainingHours = totalHours % 24;
+    const hours = Math.floor(remainingHours);
+    const minutes = Math.round((remainingHours % 1) * 60);
+    
+    let timeStr = '';
+    if (days > 0) {
+      timeStr += `${days} day${days > 1 ? 's' : ''}, `;
+    }
+    timeStr += `${hours} hour${hours !== 1 ? 's' : ''}`;
+    if (minutes > 0) {
+      timeStr += `, ${minutes} minute${minutes !== 1 ? 's' : ''}`;
+    }
+    
+    setResult(`Time to afford: ${timeStr}`);
   };
 
   return (
