@@ -35,7 +35,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>Time To Buy X</Text>
       
-      <Text style = {styles.inputTitle}>Item Price:</Text>
+      <Text style = {styles.inputTitle}>Price:</Text>
       <TextInput
         style={styles.input}
         value={itemPrice}
