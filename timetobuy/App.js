@@ -22,7 +22,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>Time To Buy X</Text>
       
-      <Text>Item Price (€):</Text>
+      <Text style = {styles.inputTitle}>Item Price:</Text>
       <TextInput
         style={styles.input}
         value={itemPrice}
@@ -31,7 +31,7 @@ export default function App() {
         placeholder="e.g., 100"
       />
       
-      <Text>Hourly Rate (€):</Text>
+      <Text style = {styles.inputTitle}>Hourly Rate:</Text>
       <TextInput
         style={styles.input}
         value={hourlyRate}
@@ -39,8 +39,10 @@ export default function App() {
         keyboardType="numeric"
         placeholder="e.g., 15"
       />
+      <View style={styles.calculateView}>
+        <Button title="Calculate" onPress={calculateTime}/>
+      </View>
       
-      <Button title="Calculate" onPress={calculateTime} />
       
       {result ? <Text style={styles.result}>{result}</Text> : null}
     </View>
@@ -48,8 +50,40 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20 },
-  title: { fontSize: 24, textAlign: 'center', marginBottom: 20 },
-  input: { borderWidth: 1, padding: 10, marginBottom: 10 },
-  result: { marginTop: 20, fontSize: 16, textAlign: 'center' },
+  container: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    padding: 20 
+  },
+
+  title: { 
+    fontSize: 24,
+    textAlign: 'center', 
+    marginBottom: 20,
+    top: -100,
+  },
+
+  inputTitle: { 
+    fontSize: 16,
+    marginBottom: 10,
+    top: -100,
+  },
+
+  calculateView:{
+    top: -100,
+  },
+
+  input: { 
+    borderWidth: 1, 
+    padding: 10,
+    marginBottom: 10, 
+    top: -100,
+  },
+
+  result: { 
+    marginTop: 20, 
+    fontSize: 16, 
+    textAlign: 'center', 
+    top: -100,
+  },
 });
