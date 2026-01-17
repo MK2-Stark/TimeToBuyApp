@@ -9,6 +9,7 @@ import {
   ScrollView,
   Animated,
   Platform,
+  Image,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -154,7 +155,11 @@ export default function App() {
       <ScrollView ref={scrollViewRef} contentContainerStyle={styles.scrollContent}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.title}>Time To Buy X</Text>
+          <Image
+            source={require('./assets/timetobuy logo.png')}
+            style={styles.logo}
+            resizeMode="contain"
+          />
           <Text style={styles.subtitle}>Make Mindful Spending Decisions</Text>
         </View>
 
@@ -198,7 +203,7 @@ export default function App() {
 
           {/* Hourly Rate Input */}
           <View style={styles.inputGroup}>
-            <Text style={styles.label}>Your Hourly Rate (after deductions)</Text>
+            <Text style={styles.label}>Your Hourly Rate (before tax)</Text>
             <View style={styles.inputWrapper}>
               <Text style={styles.currencySymbol}>{getCurrencySymbol()}</Text>
               <TextInput
@@ -380,7 +385,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F9FF',
+    backgroundColor: '#FFFFFF',
   },
   scrollContent: {
     padding: 20,
@@ -390,12 +395,12 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     marginTop: 20,
   },
-  title: {
-    fontSize: 32,
-    fontWeight: '700',
-    color: '#1A1F36',
-    textAlign: 'center',
-    letterSpacing: -0.5,
+  logo: {
+    width: 240,
+    height: 160,
+    alignSelf: 'center',
+    marginBottom: 8,
+    backgroundColor: '#FFFFFF',
   },
   subtitle: {
     fontSize: 16,
@@ -404,14 +409,14 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   card: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#EEF0FF',
     borderRadius: 16,
     padding: 20,
     shadowColor: '#6B73FF',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.2,
     shadowRadius: 12,
-    elevation: 5,
+    elevation: 8,
   },
   inputGroup: {
     marginBottom: 20,
@@ -425,7 +430,7 @@ const styles = StyleSheet.create({
   inputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#F5F6FA',
+    backgroundColor: '#FFFFFF',
     borderRadius: 12,
     borderWidth: 2,
     borderColor: '#E8EBF5',
@@ -460,7 +465,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 2,
     borderColor: '#E8EBF5',
-    backgroundColor: '#F5F6FA',
+    backgroundColor: '#FFFFFF',
     overflow: 'hidden',
     ...(Platform.OS === 'web' && {
       // Additional fix for web to ensure border follows radius
@@ -483,7 +488,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 2,
     borderColor: '#E8EBF5',
-    backgroundColor: '#F5F6FA',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
   },
   toggleButtonActive: {
