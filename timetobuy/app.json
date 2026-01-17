@@ -1,29 +1,62 @@
 {
   "expo": {
-    "name": "timetobuy",
-    "slug": "timetobuy",
+    "name": "Time To Buy X - Mindful Spending",
+    "slug": "time-to-buy-x",
+    "owner": "YOUR_EXPO_USERNAME",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "scheme": "timetobuy",
+    "description": "Calculate how many hours of your life you need to work to afford any purchase. Make mindful spending decisions by visualizing the true time cost of items. Distinguish needs from wants and spend your life hours wisely.",
+    "primaryColor": "#6B73FF",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#6B73FF"
     },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.timetobuy",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "CFBundleDisplayName": "Time To Buy X",
+        "NSCameraUsageDescription": "This app does not use the camera.",
+        "NSPhotoLibraryUsageDescription": "This app does not use the photo library."
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#6B73FF"
       },
+      "package": "com.yourcompany.timetobuy",
+      "versionCode": 1,
+      "permissions": [],
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "Time To Buy X - Mindful Spending Calculator",
+      "shortName": "Time To Buy X",
+      "description": "Calculate how many hours you need to work to afford purchases. Make mindful spending decisions.",
+      "themeColor": "#6B73FF",
+      "backgroundColor": "#F8F9FF"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "YOUR_PROJECT_ID"
+      }
     }
   }
 }
